@@ -18,7 +18,9 @@ Markingmode: https://nativescript.org/blog/markingmode-none-is-official-boost-an
 
 3. Downgraded Nativescript Core to 6.5.4 (with webscript)
 
-4. 
+4. Manually destroying the component
+
+https://github.com/nstudio/nativescript-videoplayer/issues/129
 
 ## Usage
 
