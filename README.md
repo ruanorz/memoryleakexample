@@ -16,7 +16,7 @@ EnableProdMode: Is there something similar to enable prod mode on vuejs
 Markingmode: https://nativescript.org/blog/markingmode-none-is-official-boost-android-performance-while-avoiding-memory-issues/
 
 
-3. Downgraded Nativescript to 6.5.4
+3. Downgraded Nativescript Core to 6.5.4 (with webscript)
 
 4. 
 
