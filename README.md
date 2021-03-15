@@ -4,18 +4,19 @@
 
 ### Problems with Navigation and Memory Leaks
 
-Solutions Tried: 
+Solutions Tried and Reviewed: 
 
 1. Memory Leak on 7.2.0
 https://github.com/NativeScript/ns-v8ios-runtime/issues/105
 
 
-2. Memor Leak 2018
+2. Memory Leak 2018
 https://github.com/NativeScript/nativescript-angular/issues/1215
 EnableProdMode: Is there something similar to enable prod mode on vuejs
 Markingmode: https://nativescript.org/blog/markingmode-none-is-official-boost-android-performance-while-avoiding-memory-issues/
 
 
+3. Downgraded Nativescript to 6.5.4
 
 ## Usage
 
