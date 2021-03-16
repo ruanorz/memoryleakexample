@@ -5,10 +5,15 @@
 "@nativescript/core": "7.3.0"
 
 "nativescript-vue": "^2.8.1"
+
 "@nativescript/ios": "7.2.0"
+
 ✔ Component nativescript has 7.2.1 version and is up to date.
+
 ✔ Component @nativescript/core has 7.3.0 version and is up to date.
+
 ✔ Component @nativescript/ios has 7.2.0 version and is up to date.
+
 
 ### Describe the bug
 
