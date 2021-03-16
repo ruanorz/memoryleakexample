@@ -17,15 +17,18 @@
 
 ### Describe the bug
 
-NS is not freeing memory on page navigations on iOS. When profilinign, on each page navigation, the memory is increasing, app is getting slower and at some point the OS terminates the app. This behaviour is restricted to IOS, we have profiled with the Android Runtime (https://github.com/NativeScript/android-runtime) and the garbage collection works as expected.  
+NS is not freeing memory on page navigations on iOS. When profiling, on each page navigation, the memory is increasing and app gets slower. Then at some point the app freezes or the OS terminates the app. This behaviour is restricted to IOS, we have profiled with the Android Runtime (https://github.com/NativeScript/android-runtime) and the garbage collection works as expected.  
+
+On a very simple application, include below, each page navigation increases the memory footprint of the app by 60 - 80 megs until the app reaches 1 - 2 Gigs and stops working.  
+
+We have created several test apps with Vue and Angular and the memory leack occurs irrespective of JS framework.  
 
 ### Solutions Tried and Reviewed
-1. Memory Leak on 7.2.0 with (https://github.com/NativeScript/ns-v8ios-runtime)
+1. The smae issues has been posted previously - Memory Leak on 7.2.0 with (https://github.com/NativeScript/ns-v8ios-runtime)
 https://github.com/NativeScript/ns-v8ios-runtime/issues/105
-When profiling, this seems to be the same issue that we have experience.
 
-	@@ -14,33 +22,37 @@ https://github.com/NativeScript/nativescript-angular/issues/1215
 EnableProdMode: Is there something similar to enable prod mode on vuejs
+https://github.com/NativeScript/nativescript-angular/issues/1215
 Markingmode: https://nativescript.org/blog/markingmode-none-is-official-boost-android-performance-while-avoiding-memory-issues/
 
 3. Downgraded Nativescript iOSCore to 6.5.4 (https://github.com/NativeScript/ios-runtime)
@@ -38,20 +41,22 @@ Markingmode: https://nativescript.org/blog/markingmode-none-is-official-boost-an
 
 7. Trying with the templates project with 6.5.4
 
-8. Setting the V8flags in the config for IOS
+8. Setting the V8flags in the config for IOS (on the V8 Runtime https://github.com/NativeScript/ns-v8ios-runtime)
 
-9. Trying with clearHistory flag and navigateBack method = same result
+9. Navigating with the clearHistory flag set to truw and navigateBack method = same result
 
 10. Tested on simulators and real iPhones. (iOS 12.4.8, iOS 13.1, 13.3.1)
 
-11. Tested with different Layouts (complex and simples)
+11. Tested with different Layouts (complex and simple)
 
-12. Manually calling the GC
+12. Manually calling the GC in the navigate back method reduces the memory by a small percentage (0.1% - 0.3%). 
 
-13. It works on Android
+13. As mentioned, it works on Android, see the profiling from below.
 ![android memory metrics](https://i.ibb.co/nrF6Ltj/image.png)
 
 ### Project Examples
+
+We include two sample projects, the first is NS7 and the second NS6, both exhibt the same memory leaks.
 
 NS7: https://github.com/alkimiiapps/memoryleakexample
 
