@@ -62,7 +62,7 @@ NS7: https://github.com/alkimiiapps/memoryleakexample
 
 NS6: https://github.com/alkimiiapps/ns6test
 
-### Metrics
+### Example Video of the memory reaching 1/2 Gig
 
 [![IMAGE ALT TEXT HERE](https://img.youtube.com/vi/oHAyKfUyq6M/0.jpg)](https://www.youtube.com/watch?v=oHAyKfUyq6M)
 
