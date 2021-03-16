@@ -16,35 +16,31 @@
 </template>
 
 <script >
-  // Components
-  import ListItem from './ListItem'
-  import Main from './App'
-  import {GC} from 'utils/utils'
+// Components
+import ListItem from './ListItem'
+import Main from './App'
 
-  export default {
-    components: {
-      ListItem
+export default {
+  components: {
+    ListItem
+  },
+  data() {
+    return {
+      msg: 'Hello World!',
+      items: new Array(1045)
+    }
+  },
+
+  methods: {
+    nextPage() {
+      this.$navigateTo(Main)
     },
-    data() {
-      return {
-        msg: 'Hello World!',
-        items: new Array(1045),
-        indexkk: 0
-      }
-    },
-    
-    methods: {
-      nextPage() {
-        this.$navigateTo(Main, {
-          clearHistory: true
-        })
-      },
-      navigateBack() {
-        this.$navigateBack()
-        GC()
-      }
+    navigateBack() {
+      this.$navigateBack()
+      gc()
     }
   }
+}
 </script>
 
 <style scoped>
