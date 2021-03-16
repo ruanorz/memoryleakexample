@@ -21,15 +21,15 @@ NS is not freeing memory on page navigations on iOS. When profiling, on each pag
 
 On a very simple application, two included below, each page navigation increases the memory footprint of the app by 60 - 80 megs until the app reaches 1 - 2 Gigs and stops working.  
 
-We have created several test apps with Vue and Angular and the memory leack occurs irrespective of JS framework.  
+We have created several test apps with Vue and Angular and the memory leack occurs irrespective of the JS framework.  
 
 ### Solutions Tried and Reviewed
 1. The smae issues has been posted previously - Memory Leak on 7.2.0 with (https://github.com/NativeScript/ns-v8ios-runtime)
-https://github.com/NativeScript/ns-v8ios-runtime/issues/105
+   https://github.com/NativeScript/ns-v8ios-runtime/issues/105
 
-EnableProdMode: Is there something similar to enable prod mode on vuejs
-https://github.com/NativeScript/nativescript-angular/issues/1215
-Markingmode: https://nativescript.org/blog/markingmode-none-is-official-boost-android-performance-while-avoiding-memory-issues/
+    EnableProdMode: Is there something similar to enable prod mode on vuejs
+    https://github.com/NativeScript/nativescript-angular/issues/1215
+    Markingmode: https://nativescript.org/blog/markingmode-none-is-official-boost-android-performance-while-avoiding-memory-issues/
 
 3. Downgraded Nativescript iOSCore to 6.5.4 (https://github.com/NativeScript/ios-runtime)
    We experience the same issues with the older runtime. 
@@ -43,7 +43,7 @@ Markingmode: https://nativescript.org/blog/markingmode-none-is-official-boost-an
 
 8. Setting the V8flags in the config for IOS (on the V8 Runtime https://github.com/NativeScript/ns-v8ios-runtime)
 
-9. Navigating with the clearHistory flag set to truw and navigateBack method = same result
+9. Navigating with the clearHistory flag (set to true) and navigateBack method = same result
 
 10. Tested on simulators and real iPhones. (iOS 12.4.8, iOS 13.1, 13.3.1)
 
@@ -62,7 +62,7 @@ NS7: https://github.com/alkimiiapps/memoryleakexample
 
 NS6: https://github.com/alkimiiapps/ns6test
 
-### Example Video of the memory reaching 1/2 Gig
+### Example Video of the memory reaching 0.5 Gig
 
 [![IMAGE ALT TEXT HERE](https://img.youtube.com/vi/oHAyKfUyq6M/0.jpg)](https://www.youtube.com/watch?v=oHAyKfUyq6M)
 
