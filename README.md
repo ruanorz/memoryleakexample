@@ -17,19 +17,19 @@
 
 ### Describe the bug
 
-NS is not freeing memory on page navigations on iOS. On each navigation, the app is getting slower and at some point the OS is killing the app.
+NS is not freeing memory on page navigations on iOS. When profilinign, on each page navigation, the memory is increasing, app is getting slower and at some point the OS terminates the app. This behaviour is restricted to IOS, we have profiled with the Android Runtime (https://github.com/NativeScript/android-runtime) and the garbage collection works as expected.  
 
 ### Solutions Tried and Reviewed
-1. Memory Leak on 7.2.0
+1. Memory Leak on 7.2.0 with (https://github.com/NativeScript/ns-v8ios-runtime)
 https://github.com/NativeScript/ns-v8ios-runtime/issues/105
+When profiling, this seems to be the same issue that we have experience.
 
 	@@ -14,33 +22,37 @@ https://github.com/NativeScript/nativescript-angular/issues/1215
 EnableProdMode: Is there something similar to enable prod mode on vuejs
 Markingmode: https://nativescript.org/blog/markingmode-none-is-official-boost-android-performance-while-avoiding-memory-issues/
 
-3. Downgraded Nativescript iOSCore to 6.5.4 (with old JS engine)
-
-4. Downgraded Nativescript version to 6
+3. Downgraded Nativescript iOSCore to 6.5.4 (https://github.com/NativeScript/ios-runtime)
+   We experience the same issues with the older runtime. 
 
 5. Manually destroying the component
    https://github.com/nstudio/nativescript-videoplayer/issues/129
