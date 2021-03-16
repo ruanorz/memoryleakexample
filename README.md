@@ -26,15 +26,18 @@ We have created several test apps with Vue and Angular and the memory leack occu
 ### Solutions Tried and Reviewed
 1. The smae issues has been posted previously - Memory Leak on 7.2.0 with (https://github.com/NativeScript/ns-v8ios-runtime)
    https://github.com/NativeScript/ns-v8ios-runtime/issues/105
+   
+   We have also:
+   
+   EnableProdMode: Is there something similar to enable prod mode on vuejs
+   https://github.com/NativeScript/nativescript-angular/issues/1215
+   Markingmode: https://nativescript.org/blog/markingmode-none-is-official-boost-android-performance-while-avoiding-memory-issues/
 
-    EnableProdMode: Is there something similar to enable prod mode on vuejs
-    https://github.com/NativeScript/nativescript-angular/issues/1215
-    Markingmode: https://nativescript.org/blog/markingmode-none-is-official-boost-android-performance-while-avoiding-memory-issues/
+3. Downgraded Nativescript iOSCore to 6.5.4 (https://github.com/NativeScript/ios-runtime).
 
-3. Downgraded Nativescript iOSCore to 6.5.4 (https://github.com/NativeScript/ios-runtime)
    We experience the same issues with the older runtime. 
 
-5. Manually destroyed the component
+5. Manually destroyed the component - tried different call backs (Unloaded for example)
    https://github.com/nstudio/nativescript-videoplayer/issues/129
 
 6. Tried with Angular (its happening even on the creation project templates)
@@ -56,13 +59,15 @@ We have created several test apps with Vue and Angular and the memory leack occu
 
 ### Project Examples
 
-We include two sample projects, the first is NS7 and the second NS6, both exhibt the same memory leaks.
+We include two sample projects, the first is NS7 and the second NS6, both exhibt the same issues with memory.
 
 NS7: https://github.com/alkimiiapps/memoryleakexample
 
 NS6: https://github.com/alkimiiapps/ns6test
 
 ### Example Video of the memory reaching 0.5 Gig
+
+Here is a gif of the profiling, where the user navigates back and forth between pages and the memor increases with each navigation.
 
 [![IMAGE ALT TEXT HERE](https://img.youtube.com/vi/oHAyKfUyq6M/0.jpg)](https://www.youtube.com/watch?v=oHAyKfUyq6M)
 
