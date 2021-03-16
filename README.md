@@ -21,7 +21,7 @@ Markingmode: https://nativescript.org/blog/markingmode-none-is-official-boost-an
 
 5. Trying with Angular
 
-6. Trying with the demo project
+6. Trying with the demo project with 6.5.4 - @jose
 
 7. Setting the V8flags in the config for IOS
 
